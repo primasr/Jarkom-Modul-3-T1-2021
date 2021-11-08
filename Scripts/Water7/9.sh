@@ -1,5 +1,5 @@
 htpasswd -c -b -m /etc/squid/passwd luffybelikapalti1 luffy_ti1
-htpasswd -c -b -m /etc/squid/passwd zorobelikapalti1 zoro_ti1
+htpasswd -b -m /etc/squid/passwd zorobelikapalti1 zoro_ti1
 
 echo '
 http_port 5000

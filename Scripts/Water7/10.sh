@@ -15,8 +15,7 @@ auth_param basic realm Proxy
 auth_param basic credentialsttl 2 hours
 auth_param basic casesensitive on
 acl USERS proxy_auth REQUIRED
-http_access allow USERS
-http_access allow AVAILABLE_WORKING
+http_access allow USERS AVAILABLE_WORKING
 http_access deny all
 ' > /etc/squid/squid.conf
 
