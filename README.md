@@ -45,7 +45,10 @@ apt-get install bind9 -y
 ```
 kemudian Kmi melakukan membuat domain franky.ti1.com di /etc/bind/named.conf.local dan mengisi konfigurasinya seperti berikut.
 ```
-
+zone "franky.ti1.com" {
+    	type master;
+    	file "/etc/bind/kaizoku/franky.ti1.com";
+};
 ```
 setelahnya, kami membuat folder kaizoku dengan ```mkdir -p /etc/bind/kaizoku```. Kemudian kami mengopykan db.local pada path /etc/bind ke dalam folder kaizoku yang baru saja dibuat dan ubah namanya menjadi frankyti1.com dengan command: ```cp /etc/bind/db.local /etc/bind/kaizoku/franky.ti1.com```
 
