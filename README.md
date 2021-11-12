@@ -96,9 +96,9 @@ $TTL	604800
 ```
 kemudian dilakukan service restart dengan command: ```service bind9 restart```
 
-b. Pada Loguetown dilakukan pengecekan terhadap DNS Server yang telah dibuat dengan mengatur bagian ```/etc/resolv.conf``` untuk menambahkan nameserver dengan IP yang mengarah ke Enieslobby dengan command: ```nameserver 10.42.2.2``. Kemudian lakukan ping ke franky .ti1.com sebagai berikut.
+b. Pada Loguetown dilakukan pengecekan terhadap DNS Server yang telah dibuat dengan mengatur bagian ```/etc/resolv.conf``` untuk menambahkan nameserver dengan IP yang mengarah ke Enieslobby dengan command: ```nameserver 10.42.2.2```. Kemudian lakukan ping ke franky .ti1.com sebagai berikut.
 ```ping franky.ti1.com```
-(gambar 1.9)
+![1.9](https://github.com/primasr/Jarkom-Modul-3-T1-2021/blob/main/Images/1.9.png?raw=true)
 Sedangkan untuk pengecekan Reverse DNS, Loguetown harus melakukan instalasi dsutils dengan command: ```apt-get install dnsutils -y```. Kemudian untuk mengeceknya bisa mengetikkan command: ```host -t PTR 10.42.2.2```
 (Gambar 1.10)
 
@@ -148,8 +148,10 @@ iface eth0 inet dhcp
 ```
 Setelah itu, liat pada node Logutown. Dan coba stop node dan nyalakan kembali dengan cara: Klik Kanan `Loguetown` > Stop > Start Lagi.
 (Gambar 5.0)
+(gambar 5.1)
+(gambar 5.2)
 Dapat dilihat loguetown mendapatkan DNS dari IP Enieslobby dengan IP nya yang terlihat di Loguetown sebagai berikut.
-(gambar 5.1).
+(gambar 5.3).
 
 e. Kemudian pada Water7 kami buat Proxy servernya, namun sebelum itu kami melakukan instalasi squid terlebih dahulu. dengan command: ```apt-get install squid``` kemudian cek status squid dengan ```service squid status``` kemudian kami melakukan backup pada squidnya dengan ```mv /etc/squid/squid.conf /etc/squid/squid.conf.bak``` dan membuat konfigurasi Squid baru Pada file ```/etc/squid/squid.conf``` dengan script
 ```
