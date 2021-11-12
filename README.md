@@ -19,24 +19,24 @@ Ada beberapa kriteria yang ingin dibuat oleh Luffy dan Zoro, yaitu:
 5. Lama waktu DHCP server meminjamkan alamat IP kepada Client yang melalui Switch1 selama 6 menit sedangkan pada client yang melalui Switch3 selama 12 menit. Dengan waktu maksimal yang dialokasikan untuk peminjaman alamat IP selama 120 menit. (6)
 ## Jawaban
 Sebelum mengerjakan soal ini, kami membuat topologinya sebagai berikut.
-(gambar 1.0)
+![1.0](https://github.com/primasr/Jarkom-Modul-3-T1-2021/blob/main/Images/1.0.png?raw=true)
 - Dengan konfigurasi pada Foosha:
-(gambar 1.1)
-(gambar 1.1)
+![1.1](https://github.com/primasr/Jarkom-Modul-3-T1-2021/blob/main/Images/1.1.png?raw=true)
+![1.1.1](https://github.com/primasr/Jarkom-Modul-3-T1-2021/blob/main/Images/1.1.1.png?raw=true)
 - Konfigurasi pada Loguetown:
-(gambar 1.2)
+![1.2](https://github.com/primasr/Jarkom-Modul-3-T1-2021/blob/main/Images/1.2.png?raw=true)
 - Konfigurasi pada Alabasta:
-(gambar 1.3)
+![1.3](https://github.com/primasr/Jarkom-Modul-3-T1-2021/blob/main/Images/1.3.png?raw=true)
 - Konfigurasi pada Enieslobby:
-(gambar 1.4)
+![1.4](https://github.com/primasr/Jarkom-Modul-3-T1-2021/blob/main/Images/1.4.png?raw=true)
 - Konfigurasi pada Water7:
-(gambar 1.5)
+![1.5](https://github.com/primasr/Jarkom-Modul-3-T1-2021/blob/main/Images/1.5.png?raw=true)
 - Konfigurasi pada Jipangu:
-(gambar 1.6)
+![1.6](https://github.com/primasr/Jarkom-Modul-3-T1-2021/blob/main/Images/1.6.png?raw=true)
 - Konfigurasi pada Tottoland:
-(gambar 1.7)
+![1.7](https://github.com/primasr/Jarkom-Modul-3-T1-2021/blob/main/Images/1.7.png?raw=true)
 - Dan Konfigurasi pada Skypie:
-(gambar 1.6)
+![1.8](https://github.com/primasr/Jarkom-Modul-3-T1-2021/blob/main/Images/1.8.png?raw=true)
 Pada nomer 1, diminta untuk menjadikan Enieslobby sebagai DNS Server, Jipangu sebagai DHCP Server, dan Water7 sebagai proxy server. Sedangkan pada nomer 2 diminta untuk menjadikan foosha sebagai DHCP Relay. sebagai berikut.
 
 a. Di Enieslobby kami melakukan instalasi bind9 terlebih dahulu untuk menjadikannya sebagai DNS Server.
@@ -46,7 +46,10 @@ apt-get install bind9 -y
 ```
 kemudian Kmi melakukan membuat domain franky.ti1.com di /etc/bind/named.conf.local dan mengisi konfigurasinya seperti berikut.
 ```
-
+zone "franky.ti1.com" {
+    	type master;
+    	file "/etc/bind/kaizoku/franky.ti1.com";
+};
 ```
 setelahnya, kami membuat folder kaizoku dengan ```mkdir -p /etc/bind/kaizoku```. Kemudian kami mengopykan db.local pada path /etc/bind ke dalam folder kaizoku yang baru saja dibuat dan ubah namanya menjadi frankyti1.com dengan command: ```cp /etc/bind/db.local /etc/bind/kaizoku/franky.ti1.com```
 
