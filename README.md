@@ -100,7 +100,7 @@ b. Pada Loguetown dilakukan pengecekan terhadap DNS Server yang telah dibuat den
 ```ping franky.ti1.com```
 ![1.9](https://github.com/primasr/Jarkom-Modul-3-T1-2021/blob/main/Images/1.9.png?raw=true)
 Sedangkan untuk pengecekan Reverse DNS, Loguetown harus melakukan instalasi dsutils dengan command: ```apt-get install dnsutils -y```. Kemudian untuk mengeceknya bisa mengetikkan command: ```host -t PTR 10.42.2.2```
-(Gambar 1.10)
+![1.10](https://github.com/primasr/Jarkom-Modul-3-T1-2021/blob/main/Images/1.10.png?raw=true)
 
 c. Kemudian kami mennjadikan Foosha sebagai DHCP relay dengan mengatur konfigurasi pada ```/etc/sysctl.conf``` di Foosha dengan command ```net.ipv4.ip_forward=1```. kemudian melakukan command ```sysctl -p```. kemudian mengintsall dhcp relay dengan command ``` apt-get install isc-dhcp-relay -y```.
 
@@ -147,11 +147,11 @@ auto eth0
 iface eth0 inet dhcp
 ```
 Setelah itu, liat pada node Logutown. Dan coba stop node dan nyalakan kembali dengan cara: Klik Kanan `Loguetown` > Stop > Start Lagi.
-(Gambar 5.0)
-(gambar 5.1)
-(gambar 5.2)
+![5.0](https://github.com/primasr/Jarkom-Modul-3-T1-2021/blob/main/Images/5.0.png?raw=true)
+![5.1](https://github.com/primasr/Jarkom-Modul-3-T1-2021/blob/main/Images/5.1.png?raw=true)
+![5.2](https://github.com/primasr/Jarkom-Modul-3-T1-2021/blob/main/Images/5.2.png?raw=true)
 Dapat dilihat loguetown mendapatkan DNS dari IP Enieslobby dengan IP nya yang terlihat di Loguetown sebagai berikut.
-(gambar 5.3).
+![5.3](https://github.com/primasr/Jarkom-Modul-3-T1-2021/blob/main/Images/5.3.png?raw=true)
 
 e. Kemudian pada Water7 kami buat Proxy servernya, namun sebelum itu kami melakukan instalasi squid terlebih dahulu. dengan command: ```apt-get install squid``` kemudian cek status squid dengan ```service squid status``` kemudian kami melakukan backup pada squidnya dengan ```mv /etc/squid/squid.conf /etc/squid/squid.conf.bak``` dan membuat konfigurasi Squid baru Pada file ```/etc/squid/squid.conf``` dengan script
 ```
@@ -162,8 +162,8 @@ http_access allow all
 ```
 http_access allow all dilakukan supaya bisa mengakses web. Kemudian kami melakukan restart pada service dengan ```service squid restart```
 
-f. pada Untuk mengecek proxy servernya, pada Loguetown kami melakukan pengaktifan dulu pada proxynya dengan ```export http_proxy="http://10.42.2.3:8080" ``` dengan IP nya Water7 sebagai Proxynya. Untuk memeriksa apakah konfigurasi proxy pada Loguetown berhasil kami melakukan perintah ```env | grep -i proxy```. Kemudian kami lakukan ```unset http_proxy``` untuk menonaktifkan proxy. Hasilnya dapat dilihat seperti gambar berikut.
-(Gambar 6.0)
+f. pada Untuk mengecek proxy servernya, pada Loguetown kami melakukan pengaktifan dulu pada proxynya dengan ```export http_proxy="http://10.42.2.3:8080" ``` dengan IP nya Water7 sebagai Proxynya. Untuk memeriksa apakah konfigurasi proxy pada Loguetown berhasil kami melakukan perintah ```env | grep -i proxy```. Kemudian kami juga dapat dilakukan ```unset http_proxy``` jika ingin menonaktifkan proxy. Hasilnya dapat dilihat seperti gambar berikut.
+![6.0](https://github.com/primasr/Jarkom-Modul-3-T1-2021/blob/main/Images/6.0.png?raw=true)
 
 ## Soal 7
 Luffy dan Zoro berencana menjadikan Skypie sebagai server untuk jual beli kapal yang dimilikinya dengan alamat IP yang tetap dengan IP [prefix IP].3.69
