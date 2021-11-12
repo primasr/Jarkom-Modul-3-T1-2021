@@ -145,6 +145,18 @@ Setelah itu, liat pada node Logutown. Dan coba stop node dan nyalakan kembali de
 (Gambar 5.0)
 Dapat dilihat loguetown mendapatkan DNS dari IP Enieslobby dengan IP nya yang terlihat di Loguetown sebagai berikut.
 (gambar 5.1).
+
+e. Kemudian pada Water7 kami buat Proxy servernya, namun sebelum itu kami melakukan instalasi squid terlebih dahulu. dengan command: ```apt-get install squid``` kemudian cek status squid dengan ```service squid status``` kemudian kami melakukan backup pada squidnya dengan ```mv /etc/squid/squid.conf /etc/squid/squid.conf.bak``` dan membuat konfigurasi Squid baru Pada file ```/etc/squid/squid.conf``` dengan script
+```
+http_port 8080
+visible_hostname Water7
+
+http_access allow all
+```
+http_access allow all dilakukan supaya bisa mengakses web. Kemudian kami melakukan restart pada service dengan ```service squid restart```
+
+f. pada Untuk mengecek proxy servernya, pada Loguetown kami melakukan pengaktifan dulu pada proxynya dengan ```export http_proxy="http://10.42.2.3:8080" ``` dengan IP nya Water7 sebagai Proxynya. Untuk memeriksa apakah konfigurasi proxy pada Loguetown berhasil kami melakukan perintah ```env | grep -i proxy```. Kemudian kami lakukan ```unset http_proxy``` untuk menonaktifkan proxy. Hasilnya dapat dilihat seperti gambar berikut.
+(Gambar 6.0)
 ## Soal 7
 Luffy dan Zoro berencana menjadikan Skypie sebagai server untuk jual beli kapal yang dimilikinya dengan alamat IP yang tetap dengan IP [prefix IP].3.69
 ## Jawaban
