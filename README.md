@@ -21,21 +21,22 @@ Ada beberapa kriteria yang ingin dibuat oleh Luffy dan Zoro, yaitu:
 Sebelum mengerjakan soal ini, kami membuat topologinya sebagai berikut.
 (gambar 1.0)
 - Dengan konfigurasi pada Foosha:
-(gambar 1.2)
+(gambar 1.1)
+(gambar 1.1)
 - Konfigurasi pada Loguetown:
-(gambar 1.3)
+(gambar 1.2)
 - Konfigurasi pada Alabasta:
-(gambar 1.4)
+(gambar 1.3)
 - Konfigurasi pada Enieslobby:
-(gambar 1.5)
+(gambar 1.4)
 - Konfigurasi pada Water7:
-(gambar 1.6)
+(gambar 1.5)
 - Konfigurasi pada Jipangu:
-(gambar 1.7)
+(gambar 1.6)
 - Konfigurasi pada Tottoland:
-(gambar 1.8)
+(gambar 1.7)
 - Dan Konfigurasi pada Skypie:
-(gambar 1.9)
+(gambar 1.6)
 Pada nomer 1, diminta untuk menjadikan Enieslobby sebagai DNS Server, Jipangu sebagai DHCP Server, dan Water7 sebagai proxy server. Sedangkan pada nomer 2 diminta untuk menjadikan foosha sebagai DHCP Relay. sebagai berikut.
 
 a. Di Enieslobby kami melakukan instalasi bind9 terlebih dahulu untuk menjadikannya sebagai DNS Server.
