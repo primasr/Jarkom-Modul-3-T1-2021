@@ -97,9 +97,10 @@ $TTL	604800
 kemudian dilakukan service restart dengan command: ```service bind9 restart```
 
 b. Pada Loguetown dilakukan pengecekan terhadap DNS Server yang telah dibuat dengan mengatur bagian ```/etc/resolv.conf``` untuk menambahkan nameserver dengan IP yang mengarah ke Enieslobby dengan command: ```nameserver 10.42.2.2``. Kemudian lakukan ping ke franky .ti1.com sebagai berikut.
-```ping -c 3 franky.ti1.com```
-(gambar 1.10)
+```ping franky.ti1.com```
+(gambar 1.9)
 Sedangkan untuk pengecekan Reverse DNS, Loguetown harus melakukan instalasi dsutils dengan command: ```apt-get install dnsutils -y```. Kemudian untuk mengeceknya bisa mengetikkan command: ```host -t PTR 10.42.2.2```
+(Gambar 1.10)
 
 c. Kemudian kami mennjadikan Foosha sebagai DHCP relay dengan mengatur konfigurasi pada ```/etc/sysctl.conf``` di Foosha dengan command ```net.ipv4.ip_forward=1```. kemudian melakukan command ```sysctl -p```. kemudian mengintsall dhcp relay dengan command ``` apt-get install isc-dhcp-relay -y```.
 
@@ -150,10 +151,21 @@ Setelah itu, liat pada node Logutown. Dan coba stop node dan nyalakan kembali de
 Dapat dilihat loguetown mendapatkan DNS dari IP Enieslobby dengan IP nya yang terlihat di Loguetown sebagai berikut.
 (gambar 5.1).
 
+e. Kemudian pada Water7 kami buat Proxy servernya, namun sebelum itu kami melakukan instalasi squid terlebih dahulu. dengan command: ```apt-get install squid``` kemudian cek status squid dengan ```service squid status``` kemudian kami melakukan backup pada squidnya dengan ```mv /etc/squid/squid.conf /etc/squid/squid.conf.bak``` dan membuat konfigurasi Squid baru Pada file ```/etc/squid/squid.conf``` dengan script
+```
+http_port 8080
+visible_hostname Water7
+
+http_access allow all
+```
+http_access allow all dilakukan supaya bisa mengakses web. Kemudian kami melakukan restart pada service dengan ```service squid restart```
+
+f. pada Untuk mengecek proxy servernya, pada Loguetown kami melakukan pengaktifan dulu pada proxynya dengan ```export http_proxy="http://10.42.2.3:8080" ``` dengan IP nya Water7 sebagai Proxynya. Untuk memeriksa apakah konfigurasi proxy pada Loguetown berhasil kami melakukan perintah ```env | grep -i proxy```. Kemudian kami lakukan ```unset http_proxy``` untuk menonaktifkan proxy. Hasilnya dapat dilihat seperti gambar berikut.
+(Gambar 6.0)
+
 ## Soal 7
 Luffy dan Zoro berencana menjadikan Skypie sebagai server untuk jual beli kapal yang dimilikinya dengan alamat IP yang tetap dengan IP [prefix IP].3.69
 ## Jawaban
-Pada soal nomer satu, kami diminta untuk  membuat Enieslobby sebagai DNS Server, Jipangu sebagai DHCP Server, Water7 sebagai Proxy Server.
 
 a. Pada Jipangu di ```/etc/dhcp/dhcpd.conf``` skypie akan mendapatkan IP tetap 10.42.3.69 seperti yang ditambahkan pada script berikut 
 ```
