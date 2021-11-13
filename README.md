@@ -439,15 +439,35 @@ Saatnya berlayar! Luffy dan Zoro akhirnya memutuskan untuk berlayar untuk mencar
 ## Jawaban
 
 a. Pada Water7 membuat konfigurasi baru Pada file ```/etc/squid/acl-bandwidth.conf``` untuk mendownload gambar seperti berikut :
+```
+nano /etc/squid/acl-bandwidth.conf
+acl PNG url_regex .png
+acl JPG url_regex .jpg
 
-kemudian mengedit konfigurasi di ```/etc/squid/squid.conf``` seperti berikut:
+acl LUFFY src 10.42.1.0/24
+acl ZORO src 10.42.3.0/24
 
-b. Pada Loguetown dan Tottoland dilakukan testing. Delay polls akan dibagi untuk Loguetown dan Tottoland. Di Loguetown mewakili luffy sedangkan tottoland mewakili zoro seperti berikut:
+delay_pools 2
+
+delay_class 1 1
+delay_access 1 allow LUFFY
+delay_parameters 1 10000/10000
+
+delay_class 2 1
+delay_access 2 allow ZORO
+delay_parameters 2 none
+```
+
+kemudian mengedit konfigurasi di ```/etc/squid/squid.conf``` dengan menambahkan ```include /etc/squid/acl-bandwidth.conf```
+
+kemudian dilakukan restart ```service squid restart```
+
+b. Pada Loguetown dan Tottoland dilakukan testing ```lynx http://super.franky.ti1.com```. Delay polls akan dibagi untuk Loguetown dan Tottoland. Di Loguetown mewakili luffy sedangkan tottoland mewakili zoro seperti berikut:
 
 ## Soal 13
 Sedangkan, Zoro yang sangat bersemangat untuk mencari harta karun, sehingga kecepatan kapal Zoro tidak dibatasi ketika sudah mendapatkan harta yang diinginkannya
 ## Jawaban
-berikut testing pada Tottoland dengan kecepatan zoro yang tidak dibatasi bandwith saat mendownload gamabr dengan konfigurasi pada nomer sebelumnya seperti berikut: 
+berikut testing pada Tottoland ```lynx http://super.franky.ti1.com``` dengan kecepatan zoro yang tidak dibatasi bandwith saat mendownload gamabr dengan konfigurasi pada nomer sebelumnya seperti berikut: 
 
 
 ## Kendala
