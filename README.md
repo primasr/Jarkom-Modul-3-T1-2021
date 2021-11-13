@@ -464,10 +464,16 @@ kemudian dilakukan restart ```service squid restart```
 
 b. Pada Loguetown dan Tottoland dilakukan testing ```lynx http://super.franky.ti1.com```. Delay polls akan dibagi untuk Loguetown dan Tottoland. Di Loguetown mewakili luffy sedangkan tottoland mewakili zoro seperti berikut:
 
+![12](https://user-images.githubusercontent.com/73151978/141647170-4e57c044-f862-46ff-a910-b875bd309e44.jpg)
+
 ## Soal 13
 Sedangkan, Zoro yang sangat bersemangat untuk mencari harta karun, sehingga kecepatan kapal Zoro tidak dibatasi ketika sudah mendapatkan harta yang diinginkannya
 ## Jawaban
 berikut testing pada Tottoland ```lynx http://super.franky.ti1.com``` dengan kecepatan zoro yang tidak dibatasi bandwith saat mendownload gamabr dengan konfigurasi pada nomer sebelumnya seperti berikut: 
+
+![13a](https://user-images.githubusercontent.com/73151978/141647165-ed3f2b92-0c07-461e-8132-d809125187d2.jpeg)
+
+![13b](https://user-images.githubusercontent.com/73151978/141647168-3ce00d3c-218d-4ca7-a86e-944df7a3ad60.jpeg)
 
 
 ## Kendala
