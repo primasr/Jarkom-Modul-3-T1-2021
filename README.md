@@ -219,6 +219,8 @@ hwaddress ether 3e:2a:81:99:1f:ad
 ```
 ditambahkan hwaddress skypie ```hardware ethernet 3e:2a:81:99:1f:ad``` lalu dilakukan restart node dan testing dengan perintah ```ip a```
 
+![7_3](https://user-images.githubusercontent.com/73151978/141645342-e5f7d83c-3626-4326-bc89-2789e08bfaf1.png)
+
 ## Soal 8
 Loguetown digunakan sebagai client Proxy agar transaksi jual beli dapat terjamin keamanannya, juga untuk mencegah kebocoran data transaksi. Pada Loguetown, proxy harus bisa diakses dengan nama jualbelikapal.yyy.com dengan port yang digunakan adalah 5000
 ## Jawaban
@@ -267,6 +269,8 @@ dan untuk memeriksa apakah konfigurasi proxy pada client berhasil menggunakan pe
 ![8a](https://user-images.githubusercontent.com/73151978/141614307-ebd551ac-02f0-4dce-bccd-de160d9d3b21.PNG)
 
 ![8b](https://user-images.githubusercontent.com/73151978/141614308-55224486-08ff-4900-b32c-0715786eb034.PNG)
+
+![8_3](https://user-images.githubusercontent.com/73151978/141645344-9dfce57f-ba57-4cc0-9a18-868c4289dd46.png)
 
 ## Soal 9
 Agar transaksi jual beli lebih aman dan pengguna website ada dua orang, proxy dipasang autentikasi user proxy dengan enkripsi MD5 dengan dua username, yaitu luffybelikapalyyy dengan password luffy_yyy dan zorobelikapalyyy dengan password zoro_yyy
@@ -321,6 +325,8 @@ http_access deny all
 dan dilakukan restart ```service squid restart```
 
 b. Pada Loguetown dilakukan testing pembatasan akses internet pada web its dengan perintah ```date -s "7 NOV 2021 09:00:00"``` dan ```lynx http://its.ac.id/```
+
+![10_3](https://user-images.githubusercontent.com/73151978/141645338-749a635f-3c5e-4e0b-bc26-e53a6bdbf736.png)
 
 
 ## Soal 11
