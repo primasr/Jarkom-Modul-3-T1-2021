@@ -4,3 +4,4 @@ apt-get install nano
 apt-get install dnsutils -y
 apt-get install lynx -y
 apt-get install ca-certificates openssl -y
+apt-get install speedtest-cli -y
