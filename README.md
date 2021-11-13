@@ -437,9 +437,18 @@ lynx google.com
 ## Soal 12
 Saatnya berlayar! Luffy dan Zoro akhirnya memutuskan untuk berlayar untuk mencari harta karun di super.franky.yyy.com. Tugas pencarian dibagi menjadi dua misi, Luffy bertugas untuk mendapatkan gambar (.png, .jpg), sedangkan Zoro mencari sisanya. Karena Luffy orangnya sangat teliti untuk mencari harta karun, ketika ia berhasil mendapatkan gambar, ia mendapatkan gambar dan melihatnya dengan kecepatan 10 kbps
 ## Jawaban
+
+a. Pada Water7 membuat konfigurasi baru Pada file ```/etc/squid/acl-bandwidth.conf``` untuk mendownload gambar seperti berikut :
+
+kemudian mengedit konfigurasi di ```/etc/squid/squid.conf``` seperti berikut:
+
+b. Pada Loguetown dan Tottoland dilakukan testing. Delay polls akan dibagi untuk Loguetown dan Tottoland. Di Loguetown mewakili luffy sedangkan tottoland mewakili zoro seperti berikut:
+
 ## Soal 13
 Sedangkan, Zoro yang sangat bersemangat untuk mencari harta karun, sehingga kecepatan kapal Zoro tidak dibatasi ketika sudah mendapatkan harta yang diinginkannya
 ## Jawaban
+berikut testing pada Tottoland dengan kecepatan zoro yang tidak dibatasi bandwith saat mendownload gamabr dengan konfigurasi pada nomer sebelumnya seperti berikut: 
+
 
 ## Kendala
-kesulitan menyelesaikan soal 12 dan 13
+
