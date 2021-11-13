@@ -264,6 +264,10 @@ export http_proxy="http://jualbelikapal.ti1.com:5000"
 ```  
 dan untuk memeriksa apakah konfigurasi proxy pada client berhasil menggunakan perintah ```env | grep -i proxy```
 
+![8a](https://user-images.githubusercontent.com/73151978/141614307-ebd551ac-02f0-4dce-bccd-de160d9d3b21.PNG)
+
+![8b](https://user-images.githubusercontent.com/73151978/141614308-55224486-08ff-4900-b32c-0715786eb034.PNG)
+
 ## Soal 9
 Agar transaksi jual beli lebih aman dan pengguna website ada dua orang, proxy dipasang autentikasi user proxy dengan enkripsi MD5 dengan dua username, yaitu luffybelikapalyyy dengan password luffy_yyy dan zorobelikapalyyy dengan password zoro_yyy
 ## Jawaban
@@ -422,6 +426,7 @@ c. Pada Loguetown melakukan testing untuk mengakses google.com, akan diredirect 
 lynx http://super.franky.ti1.com
 lynx google.com
 ```
+![11](https://user-images.githubusercontent.com/73151978/141614303-361156e2-c116-4471-b9a9-26b93fce9c61.jpeg)
 
 ## Soal 12
 Saatnya berlayar! Luffy dan Zoro akhirnya memutuskan untuk berlayar untuk mencari harta karun di super.franky.yyy.com. Tugas pencarian dibagi menjadi dua misi, Luffy bertugas untuk mendapatkan gambar (.png, .jpg), sedangkan Zoro mencari sisanya. Karena Luffy orangnya sangat teliti untuk mencari harta karun, ketika ia berhasil mendapatkan gambar, ia mendapatkan gambar dan melihatnya dengan kecepatan 10 kbps
